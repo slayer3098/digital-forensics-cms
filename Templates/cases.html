@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cases</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='case.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Cases</h1>
+
+        <form method="GET" action="/cases">
+            <select name="location" onchange="this.form.submit()">
+                <option value="">-- Select Location --</option>
+                {% for loc in locations %}
+                    <option value="{{ loc }}" {% if selected_location == loc %}selected{% endif %}>{{ loc }}</option>
+                {% endfor %}
+            </select>
+        </form>
+
+        <table>
+            <tr>
+                <th>Case ID</th>
+                <th>Name</th>
+                <th>Investigator</th>
+                <th>Status</th>
+                <th>Location</th>
+                <th>Actions</th>
+            </tr>
+            {% for case in cases %}
+            <tr>
+                <td>{{ case[1] }}</td>
+                <td>{{ case[2] }}</td>
+                <td>{{ case[3] }}</td>
+                <td>{{ case[4] }}</td>
+                <td>{{ case[5] }}</td>
+                <td>
+                    <a href="/edit-case/{{ case[0] }}" class="action-button">Edit</a> |
+                    <a href="/delete-case/{{ case[0] }}" onclick="return confirm('Delete this case?')" class="delete-button">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <a href="/dashboard">Back to Dashboard</a>
+    </div>
+</body>
+</html>

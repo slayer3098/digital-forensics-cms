@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Case</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit_case.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Case</h1>
+        <form method="POST">
+            <input name="case_id" value="{{ case[1] }}" required>
+            <input name="case_name" value="{{ case[2] }}" required>
+            <input name="investigator" value="{{ case[3] }}" required>
+            <textarea name="evidence" required>{{ case[4] }}</textarea>
+            <textarea name="description" required>{{ case[5] }}</textarea>
+            <input name="status" value="{{ case[6] }}" required>
+            <input name="location" placeholder="Location" required><br>
+            <button type="submit">Update</button>
+            <!-- New Location Field (only added this) -->
+            
+        </form>
+        <a href="/cases">Cancel</a>
+    </div>
+</body>
+</html>

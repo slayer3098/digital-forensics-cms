@@ -1,0 +1,131 @@
+/* styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, #ffffff, #ebc8c8);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 40px 20px;
+}
+
+.container {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #222;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #0072ff;
+    color: #fff;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e0f0ff;
+}
+
+.action-button, .delete-button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.action-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.action-button:hover {
+    background-color: #0056d2;
+}
+
+.delete-button {
+    background-color: #ff4d4f;
+    color: #fff;
+}
+
+.delete-button:hover {
+    background-color: #d9363e;
+}
+
+a[href="/dashboard"] {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #0072ff;
+    text-decoration: none;
+}
+
+a[href="/dashboard"]:hover {
+    text-decoration: underline;
+}
+
+
+/* --- Enhanced Colorful Dropdown Style --- */
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 14px;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+select:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 154, 158, 0.3);
+}

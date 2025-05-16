@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Case</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Case</h1>
+        <form method="POST">
+            <input name="case_id" placeholder="Case ID" required><br>
+            <input name="case_name" placeholder="Case Name" required><br>
+            <input name="investigator" placeholder="Investigator" required><br>
+            <textarea name="evidence" placeholder="Evidence" required></textarea><br>
+            <textarea name="description" placeholder="Description" required></textarea><br>
+            <input name="status" placeholder="Status" required><br>
+            
+            <!-- New Location Field (only added this) -->
+            <input name="location" placeholder="Location" required><br>
+            
+            <button type="submit">Submit</button>
+        </form>
+        <a href="/dashboard">Back to Dashboard</a>
+    </div>
+</body>
+</html>

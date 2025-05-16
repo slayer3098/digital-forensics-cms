@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cases in {{ location }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Cases in {{ location }}</h1>
+        {% for case in cases %}
+            <div class="case">
+                <h2>{{ case[1] }} ({{ case[0] }})</h2>
+                <p><strong>Investigator:</strong> {{ case[2] }}</p>
+                <p><strong>Evidence:</strong> {{ case[3] }}</p>
+                <p><strong>Description:</strong> {{ case[4] }}</p>
+                <p><strong>Status:</strong> {{ case[5] }}</p>
+            </div>
+        {% else %}
+            <p>No cases found in this location.</p>
+        {% endfor %}
+        <a href="/cases">Back to Locations</a>
+    </div>
+</body>
+</html>
